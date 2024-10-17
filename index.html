@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="# ">
+    <meta name="keywords"
+        content="Iotron is a hardware hackathon">
+    <link rel="icon" type="image/x-icon" href="#">
+    <title>IotRon</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://path-to-your-font/mr-dafoe.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <div class="menu">
+        <a id="index-link" class="nav-link my-popover scrollto" href="#hero" data-content="Home" aria-label="Home Page">
+            <!-- home icon svg -->
+            <svg class="icon icon-tabler icon-tabler-smart-home" xmlns="http://www.w3.org/2000/svg" width="1em"
+                height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                    d="M19 8.71l-5.333 -4.148a2.666 2.666 0 0 0 -3.274 0l-5.334 4.148a2.665 2.665 0 0 0 -1.029 2.105v7.2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.2c0 -.823 -.38 -1.6 -1.03 -2.105">
+                </path>
+                <path d="M16 15c-2.21 1.333-5.792 1.333-8 0"></path>
+            </svg>
+        </a>
+        <a aria-label='Portfolio' class='nav-link my-popover' data-content='Register' href='/register'>
+            <!-- diamond icon svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                class="bi bi-r-square-fill" viewBox="0 0 16 16">
+                <path d="M6.835 5.092v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z" />
+                <path
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5z" />
+            </svg>
+        </a>
+        <span class="vr-hr"></span>
+        <button id="menutoggle" class="menu-toggle d-sm-none" type="button" onclick="toggleMobileMenu()">
+            <!-- menu icon svg (mobile only) -->
+            <svg class="icon icon-tabler icon-tabler-menu" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="4" y1="8" x2="20" y2="8"></line>
+                <line x1="4" y1="16" x2="20" y2="16"></line>
+            </svg>
+            <!-- menu close icon svg (mobile only) -->
+            <svg class="icon icon-tabler icon-tabler-x" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="mobile-menu">
+            <a class="nav-link my-popover scrollto" href="#about" data-content="About" aria-label="GitHub">
+                <!-- about icon svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                    class="bi bi-file-person" viewBox="0 0 16 16">
+                    <path
+                        d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                    <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+            </a>
+            <a class="nav-link my-popover scrollto" href="#event" data-content="Events" aria-label="GitHub">
+                <!-- Event icon svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                    class="bi bi-calendar-event" viewBox="0 0 16 16">
+                    <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                </svg>
+            </a>
+            <a class="nav-link my-popover scrollto" href="#performer" data-content="Star Performer"
+                aria-label="LinkedIn">
+                <!-- linkedin icon svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-stars"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
+                </svg>
+            </a>
+            <a class="nav-link my-popover scrollto" href="#contact" data-content="Contact" aria-label="Instagram">
+                <!-- contact icon svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                    class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z" />
+                </svg>
+            </a>
+            <!-- <a class="nav-link my-popover" href="#" data-content="Register" target="_blank" aria-label="CodePen"> -->
+            <!-- Register icon svg -->
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-r-square-fill" viewBox="0 0 16 16">
+                <path d="M6.835 5.092v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z"/>
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5z"/>
+              </svg>
+          </a> -->
+        </div>
+    </div>
+
+
+    <section id="hero" style="background-image: url(asset/background.png); height: 100vh;">
+        <center><img src="./asset/Capture.PNG" class="logo"></center>
+        <!-- <div class="hero-section"> -->
+
+        <!-- Text section -->
+        <div class="text-section">
+            <h2 class="sub-text" style="margin-top: 10px;">Noida Institute of Engineering & Technology , Greater Noida
+            </h2>
+            <h2 class="sub-text" style="color: #597cff;">25 October, 2024</h2>
+            <br>
+            <a class='brochure-btn' href='#'>Register Now</a>
+            <!-- <a href="payment.html" class="brochure-btn">Payment</a> -->
+        </div>
+        <!-- </div> -->
+
+
+        <div class="timer">
+            <span>Time left:</span>
+            <br>
+            <div id="days">00</div> :
+            <div id="hours">00</div> :
+            <div id="minutes">00</div> :
+            <div id="seconds">00</div>
+        </div>
+        </div>
+    </section>
+
+    <!-- about sec -->
+    <section id="about">
+
+        <div class="responsive-container-block bigContainer">
+            <div class="responsive-container-block Container">
+                <div class="responsive-container-block leftSide">
+                    <h1>
+                        About
+                    </h1>
+                    <p class="text-blk">
+                        Iotron, organized by the Signodes Club of IoT, is a premier event that embodies the innovative
+                        spirit of the Internet of Things (IoT). Designed to push the boundaries of technology, Iotron
+                        brings together passionate minds to explore, experiment, and create solutions that leverage the
+                        power of IoT. This event serves as a platform for participants to dive into the world of smart
+                        devices and connected systems, fostering creativity and collaboration to address real-world
+                        challenges.
+
+                    </p>
+                </div>
+                <div class="responsive-container-block rightSide">
+                    <img class="number1img" src="asset/img/e1.jpg">
+                    <img class="number2img" src="asset/img/e2.jpg">
+                    <img class="number3img" src="asset/img/e3.jpg">
+                    <img class="number5img" src="asset/img/e4.jpg">
+                    <img class="number4vid" src="asset/img/e7.jpg">
+                    <img class="number7img" src="asset/img/e8.jpg">
+                    <img class="number6img" src="asset/img/e5.webp">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- events -->
+    <section id="event">
+        <div class="eventsec">
+
+            <div class="senv-container">
+                <div class="senv-title">EVENTS</div>
+                <div class="senv-card">
+                    <img alt="Technical" height="250" src="asset/techevent.jpg" width="350" />
+                    <h2>Technical Events List</h2>
+                    <p>
+                        Project Display | Robotics competition | Data Analytics Challenge | Code Cracker |
+                        IotRon | Hackathon | Mobile Gaming | Cybersecurity for IoT | App
+                        Development | IoT in Smart Cities
+                    </p>
+                    <a href="#tech"><button class="btn">Explore</button></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- events end -->
+
+
+
+
+    <!-- tech event start -->
+
+    <div class="techeve-cover" id="tech" style="background-image: url(./asset/tech.gif); height: 100vh;">
+
+        <div class="tc">
+            <h1>Technical Events</h1>
+            <div class="techeve-container" id="techEventContainer">
+                <div class="techeve-card" style="background-image: url('asset/project_display.jpg');">
+                    <div class="overlay">
+                        <h3>Project Display</h3>
+                        <p>Showcase your innovative projects in technology!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/robotics_.jpg');">
+                    <div class="overlay">
+                        <h3>Robotics Competition</h3>
+                        <p>Compete with your robotic creations!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/data_analysis.jpg');">
+                    <div class="overlay">
+                        <h3>Data Analytics Challenge</h3>
+                        <p>Analyze data and uncover insights!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/coding_challenge.jpg');">
+                    <div class="overlay">
+                        <h3>Code Cracker</h3>
+                        <p>Challenge your coding skills and solve puzzles!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/iot_inno.png');">
+                    <div class="overlay">
+                        <h3>IoT Innovations</h3>
+                        <p>Present your cutting-edge IoT solutions!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/hackathon.jpg');">
+                    <div class="overlay">
+                        <h3>Hackathon</h3>
+                        <p>Collaborate and create innovative applications!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/mobile_gaming.jpg');">
+                    <div class="overlay">
+                        <h3>Mobile Gaming</h3>
+                        <p>Compete in exciting mobile gaming challenges!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/hacking.jpg');">
+                    <div class="overlay">
+                        <h3>Cybersecurity for IoT</h3>
+                        <p>Explore the essentials of securing IoT devices!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/appdev.jpg');">
+                    <div class="overlay">
+                        <h3>Smart App Development</h3>
+                        <p>Develop apps that harness the power of IoT!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/iotcity.jpg');">
+                    <div class="overlay">
+                        <h3>IoT in Smart Cities</h3>
+                        <p>Innovate for sustainable urban development!</p>
+                    </div>
+                </div>
+                <div class="techeve-card" style="background-image: url('asset/sustainableiot.jpg');">
+                    <div class="overlay">
+                        <h3>Sustainable IoT Solutions</h3>
+                        <p>Design eco-friendly and sustainable IoT applications!</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <p
+            style="color: #000; padding-left: 50px; padding-right: 50px; margin-top: 20px ;font-size: larger;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+
+            Join Signodes Club for IoT Innovations 
+            Experience thrilling technical events like Project Display, Robo Expo, and Drone Competition. Register now to showcase your IoT projects, win exciting prizes, sharpen your skills, and gain valuable exposure in the world of Internet of Things. Don’t miss out on this opportunity to connect with fellow innovators and industry experts!
+
+        </p>
+        <br> <br>
+    
+        <a style="padding-left: 30px;" href="#" target="_blank"><button class="btn">Register</button></a>
+
+    </div>
+
+    <!-- techevent end -->
+
+
+
+
+        <section id="performer" class="performer">
+            <h1>Winners</h1>
+            <center>
+                <div class="performer-card">
+                    <div class="performer-wrapper">
+                        <img src="asset/winners.jpg" width="300px" class="performer-cover-image" />
+                    </div>
+                   
+                    <img src="asset/winners.jpg" width="200px" class="performer-character" />
+                </div>
+            </center>
+        </section>
+
+        <section class="performer">
+            <center>
+                <h1 style=" font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 45px;">
+                    Our Sponsors</h1>
+            </center>
+            <marquee>
+                <img src="/asset/img/google.png" height="100px" style="padding-right: 5%;">
+                <img src="/asset/img/cognizant.webp" height="100px" style="padding-right: 5%;">
+                <img src="/asset/img/Zscaler.webp" height="100px">
+            </marquee>
+        </section>
+       
+
+        <section id="contact" class="performer">
+            <Center>
+                <h1>Contact Us</h1>
+            </Center>
+            <footer class="footer-distributed">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.2856897800637!2d77.4881184!3d28.4629043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1e055d148a1%3A0x9f5207f7f0bc8f63!2sNoida%20Institute%20of%20Engineering%20and%20Technology%20(NIET%2C%20Greater%20Noida)!5e0!3m2!1sen!2sin!4v1633046294075!5m2!1sen!2sin"
+                    width="100%" height="400px" style="border:0; padding-bottom: 3%;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <div class="footer-left">
+
+                    <img src="asset/Capture.PNG">
+
+                    <p class="footer-links">
+                        <a class="scrollto link-1" href="#hero">Home</a>
+
+                        <a class="scrollto" href="#about">About</a>
+
+                        <a class="scrollto" href="#events">Events</a>
+
+                        <a class="scrollto" href="#performer">Winners</a>
+
+                        <a href="#" target="_main">Registration</a>
+
+                    </p>
+
+                    <div class="footer-icons">
+
+                        <a href="#" target="_main"><i
+                                class="fa fa-facebook"></i></a>
+                        <a href="#" target="_main"><i class="fa fa-twitter"></i></a>
+                        <a href="#" target="_main"><i
+                                class="fa fa-linkedin"></i></a>
+                        <a href="#"
+                            target="_main"><i class="fa fa-instagram"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="footer-center">
+
+                    <div><a href=""
+                            target="_main">
+                            <i class="fa fa-map-marker"></i>
+                            <p> Noida Institute of Enginnering & Technology <br> 19, Institutional Area, Knowledge Park II, <br> Greater Noida, Uttar Pradesh 201306, </p>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="tel:08295791298"><i class="fa fa-phone"></i>
+                            <p>+91 0000000000</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="tel:07347082245"><i class="fa fa-phone"></i>
+                            <p>+91 00000000</p>
+                        </a>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="#">niet@co.in</a></p>
+                    </div>
+
+                </div>
+
+                <div class="footer-right">
+
+                    <p class="footer-company-about">
+                        <span style="color:#1356fc">Why to be part of Iotron?</span>
+                        Being part of Iotron offers exciting opportunities for innovation and professional growth, especially in sustainable practices. You can contribute to meaningful projects that make a positive impact, all while collaborating with a talented team. The company’s focus on employee development and networking can enhance your career trajectory, making it an appealing choice for those looking to align their work with their values and aspirations.
+                    </p>
+                    
+
+                </div>
+            </footer>
+        </section>
+
+
+        <script>
+
+
+            // Timer Script
+            function countdownTimer(endDate) {
+                const daysElem = document.getElementById('days');
+                const hoursElem = document.getElementById('hours');
+                const minutesElem = document.getElementById('minutes');
+                const secondsElem = document.getElementById('seconds');
+
+                function updateTimer() {
+                    const now = new Date().getTime();
+                    const timeRemaining = endDate - now;
+
+                    if (timeRemaining > 0) {
+                        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                        daysElem.innerHTML = String(days).padStart(2, '0');
+                        hoursElem.innerHTML = String(hours).padStart(2, '0');
+                        minutesElem.innerHTML = String(minutes).padStart(2, '0');
+                        secondsElem.innerHTML = String(seconds).padStart(2, '0');
+                    } else {
+                        daysElem.innerHTML = '00';
+                        hoursElem.innerHTML = '00';
+                        minutesElem.innerHTML = '00';
+                        secondsElem.innerHTML = '00';
+                    }
+                }
+
+                setInterval(updateTimer, 1000);
+            }
+
+            const eventDate = new Date(2024, 9, 25).getTime(); // Example: Oct 22, 2024
+            countdownTimer(eventDate);
+
+
+            function initializeAutoScroll(containerId) {
+                const container = document.getElementById(containerId);
+                const cards = container.querySelectorAll('.techeve-card'); // Adjust the selector as needed
+
+                let scrollSpeed = 3;  // Adjust this to control the speed of scrolling
+                let isScrolling = true;
+                let interactionTimeout;
+
+                // Clone cards for infinite loop
+                const cloneCards = () => {
+                    const clonedNodes = [...cards].map(card => card.cloneNode(true));
+                    clonedNodes.forEach(clone => container.appendChild(clone));
+                };
+
+                cloneCards(); // Call this once on load to duplicate the cards
+
+                // Auto-scroll function
+                function autoScroll() {
+                    if (isScrolling) {
+                        container.scrollLeft += scrollSpeed;
+                        // Check if the scroll has reached the end of the original set of cards
+                        if (container.scrollLeft + container.offsetWidth >= container.scrollWidth) {
+                            // Reset scroll to the original start position (right after the first set of cards)
+                            container.scrollLeft = 0;
+                        }
+                    }
+                }
+
+                // Start auto-scrolling
+                let scrollInterval = setInterval(autoScroll, 20);  // Adjust the interval for smoothness
+
+                // Function to pause scrolling for 5 seconds on interaction
+                function pauseAutoScroll() {
+                    isScrolling = false;
+                    clearTimeout(interactionTimeout);  // Clear any previous timeout to avoid overlaps
+                    interactionTimeout = setTimeout(() => {
+                        isScrolling = true;
+                    }, 3000);  // Resume scrolling after 5 seconds
+                }
+
+                // Stop scrolling and increase width on hover and click, and resume after 5 seconds
+                cards.forEach(card => {
+                    card.addEventListener('mouseover', () => {
+                        card.classList.add('active');
+                        pauseAutoScroll();
+                    });
+                    card.addEventListener('click', () => {
+                        card.classList.add('active');
+                        pauseAutoScroll();
+                    });
+                });
+
+                // Resume scrolling and reset width when mouse leaves
+                container.addEventListener('mouseout', (e) => {
+                    if (!e.relatedTarget || !e.relatedTarget.classList.contains('techeve-card')) {
+                        cards.forEach(card => {
+                            card.classList.remove('active');
+                        });
+                        clearTimeout(interactionTimeout);
+                        isScrolling = true;
+                    }
+                });
+
+                // Toggle card expand and show p tag on click
+                cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        cards.forEach(c => {
+                            if (c !== card) {
+                                c.classList.remove('active');
+                            }
+                        });
+                        card.classList.add('active');
+                    });
+                });
+            }
+
+            // Initialize auto-scroll for each event section
+            initializeAutoScroll("techEventContainer");
+            initializeAutoScroll("nonTechEventContainer");
+            initializeAutoScroll("culturalEventContainer");
+
+            document.addEventListener("DOMContentLoaded", function () {
+                let currentPage = document.location.pathname.split("/").pop();
+                const menuDiv = document.querySelector(".menu");
+                const navLinks = menuDiv.querySelectorAll(".nav-link");
+
+                if (currentPage === "") {
+                    currentPage = navLinks[0].getAttribute("href");
+                }
+
+                navLinks.forEach((link) => {
+                    const href = link.getAttribute("href");
+
+                    if (href === currentPage) {
+                        link.classList.add("active");
+                    } else {
+                        link.classList.remove("active");
+                    }
+                });
+            });
+
+            function toggleMobileMenu() {
+                const mobileMenu = document.querySelector(".mobile-menu");
+                const menuToggle = document.querySelector("#menutoggle");
+                mobileMenu.classList.toggle("open");
+                menuToggle.classList.toggle("open");
+            }
+
+        </script>
+
+</body>
+
+</html>
